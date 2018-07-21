@@ -14,7 +14,9 @@
 	</f:metadata>
 
 	<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa"
-		emptyMessage="Nenhuma empresa cadastrada.">
+		emptyMessage="Nenhuma empresa cadastrada." 
+		rows="10" paginator="true"
+		paginatorPosition="bottom">
 		<p:column headerText="Razão social">
 			<h:outputText value="#{empresa.razaoSocial}" />
 		</p:column>
