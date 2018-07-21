@@ -16,11 +16,23 @@
 	
 		<h1>Cadastro de Empresas</h1>
 	
+		<p:toolbar>
+			<f:facet name="left">
+				<p:commandButton value="Nova" icon="ui-icon-document" />
+				<span class="ui-separator"> <span
+					class="ui-icon ui-icon-grip-dotted-vertical" />
+				</span>
+				<p:commandButton icon="ui-icon-pencil" title="Editar" />
+				<p:commandButton icon="ui-icon-trash" title="Excluir" />
+				<p:commandButton icon="ui-icon-arrowthick-1-s" title="Exportar para xls" />
+			</f:facet>
+		</p:toolbar>
+	
 		<h:form id="frm">
 			<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa"
 				emptyMessage="Nenhuma empresa cadastrada." 
 				rows="10" paginator="true"
-				paginatorPosition="bottom">
+				paginatorPosition="bottom" style="margin-top: 10px;">
 				<p:column headerText="Razão social" sortBy="#{empresa.razaoSocial}">
 					<h:outputText value="#{empresa.razaoSocial}" />
 				</p:column>
