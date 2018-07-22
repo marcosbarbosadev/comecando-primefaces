@@ -42,13 +42,20 @@ public class GestaoEmpresasBean implements Serializable {
 	}
 	
 	public void salvar() {
-		System.out.println("Salvando empresa");
 		cadastroEmpresa.salvar(empresaEdicao);
 		consultar();
 		messages.info("Empresa salva com sucesso!");
 		
 		RequestContext.getCurrentInstance().update(
 				Arrays.asList("frm:msgs", "frm:empresas-table"));
+	}
+	
+	public void excluir() {
+		System.out.println("Excluindo empresa");
+		cadastroEmpresa.excluir(empresaSelecionada);
+		empresaSelecionada = null;
+		consultar();
+		messages.info("Empresa removida com sucesso!");
 	}
 	
 	public void consultar() {
