@@ -28,6 +28,7 @@ public class GestaoEmpresasBean implements Serializable {
 	private List<Empresa> todasEmpresas;
 	
 	private Empresa empresaEdicao = new Empresa();
+	private Empresa empresaSelecionada;
 	
 	@Inject
 	private CadastroEmpresaService cadastroEmpresa;
@@ -36,14 +37,6 @@ public class GestaoEmpresasBean implements Serializable {
 	private FacesMessages messages;
 	
 	
-	public Empresa getEmpresaEdicao() {
-		return empresaEdicao;
-	}
-
-	public void setEmpresaEdicao(Empresa empresaEdicao) {
-		this.empresaEdicao = empresaEdicao;
-	}
-
 	public void prepararNovoCadastro() {
 		empresaEdicao = new Empresa();
 	}
@@ -68,6 +61,23 @@ public class GestaoEmpresasBean implements Serializable {
 	
 	public TipoEmpresa[] getTiposEmpresas() {
 		return TipoEmpresa.values();
+	}
+	
+	
+	public Empresa getEmpresaEdicao() {
+		return empresaEdicao;
+	}
+
+	public void setEmpresaEdicao(Empresa empresaEdicao) {
+		this.empresaEdicao = empresaEdicao;
+	}
+
+	public Empresa getEmpresaSelecionada() {
+		return empresaSelecionada;
+	}
+
+	public void setEmpresaSelecionada(Empresa empresaSelecionada) {
+		this.empresaSelecionada = empresaSelecionada;
 	}
 	
 }
