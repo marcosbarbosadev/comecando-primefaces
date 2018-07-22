@@ -46,7 +46,12 @@
 						
 					<p:commandButton icon="ui-icon-trash" title="Excluir" action="#{gestaoEmpresasBean.excluir}"
 						process="@this" update="empresas-table msgs toolbar"
-						disabled="#{gestaoEmpresasBean.empresaSelecionada == null}" />
+						disabled="#{gestaoEmpresasBean.empresaSelecionada == null}">
+						
+						<p:confirm header="Confirmação de exclusão" message="Tem certeza que deseja excluir empresa selecionada?"
+							icon="ui-icon-alert" />
+						
+					</p:commandButton>
 						
 					<p:commandButton icon="ui-icon-arrowthick-1-s" title="Exportar para xls" />
 				</f:facet>
