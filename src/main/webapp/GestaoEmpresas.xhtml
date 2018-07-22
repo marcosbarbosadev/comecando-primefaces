@@ -18,6 +18,8 @@
 	
 		<h:form id="frm">
 
+			<p:messages autoUpdate="true" />
+
 			<p:toolbar>
 				<f:facet name="left">
 					<p:commandButton value="Nova" icon="ui-icon-document"
@@ -53,6 +55,8 @@
 			<p:dialog header="Nova Empresa" widgetVar="edicaoEmpresaDialog" id="empresa-dialog" 
 				resizable="false" modal="true" closeOnEscape="true">
 				
+				<p:messages id="msgs-dialog" />
+				
 				<p:panelGrid columns="2" id="painel-dialog">
 					
 					<p:outputLabel value="Nome fantasia" for="nome-fantasia" />
@@ -84,8 +88,8 @@
 					<h:outputLabel />
 					<p:commandButton value="Salvar" id="salvar-button" 
 						action="#{gestaoEmpresasBean.salvar}"
-						process="empresa-dialog" update="empresa-table"
-						oncomplete="PF('edicaoEmpresaDialog').hide()" />
+						process="empresa-dialog" update="empresa-table msgs-dialog painel-dialog"
+						oncomplete="if(!args.validationFailed) PF('edicaoEmpresaDialog').hide()" />
 
 				</p:panelGrid>				
 
