@@ -18,7 +18,7 @@
 	
 		<h:form id="frm">
 
-			<p:messages autoUpdate="true" />
+			<p:messages id="msgs" />
 
 			<p:toolbar>
 				<f:facet name="left">
@@ -37,7 +37,7 @@
 				</f:facet>
 			</p:toolbar>
 
-			<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa" id="empresa-table"
+			<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa" id="empresas-table"
 				emptyMessage="Nenhuma empresa cadastrada." 
 				rows="10" paginator="true"
 				paginatorPosition="bottom" style="margin-top: 10px;">
@@ -88,7 +88,7 @@
 					<h:outputLabel />
 					<p:commandButton value="Salvar" id="salvar-button" 
 						action="#{gestaoEmpresasBean.salvar}"
-						process="empresa-dialog" update="empresa-table msgs-dialog painel-dialog"
+						process="empresa-dialog" update="msgs-dialog painel-dialog"
 						oncomplete="if(!args.validationFailed) PF('edicaoEmpresaDialog').hide()" />
 
 				</p:panelGrid>				
